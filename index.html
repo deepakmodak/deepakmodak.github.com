@@ -1,1 +1,100 @@
-Hello ! welcome @ gitHub page
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome To My GitHub Page</title>
+<link type="text/css" rel="stylesheet" href="css/green.css" />
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="js/cufon.yui.js"></script>
+<script type="text/javascript" src="js/scrollTo.js"></script>
+<script type="text/javascript" src="js/myriad.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript">
+		Cufon.replace('h1,h2');
+</script>
+</head>
+<body>
+<!-- Begin Wrapper -->
+<div id="wrapper">
+  <div class="wrapper-top"></div>
+  <div class="wrapper-mid">
+    <!-- Begin Paper -->
+    <div id="paper">
+      <div class="paper-top"></div>
+      <div id="paper-mid">
+        <div class="entry">
+          <!-- Begin Image -->
+          <img class="portrait" src="images/image.jpg" alt="Deepak Modak" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">Deepak Modak <br /><br />
+              <span>Software Engineer</span></h1>
+            <ul>
+              <li class="ad">Bangalore</li>
+              <li class="mail">dmodak007@gmail.com</li>
+              <li class="web"><a href="http://www.digitalgradient.com/">www.digitalgradient.com</a></li>
+            </ul>
+          </div>
+          <!-- End Personal Information -->
+          <!-- Begin Social -->
+          <div class="social">
+            <ul>
+              <li><a class='north' href="https://www.linkedin.com/in/deepakmodak" title="My LinkedIn page"><img src="images/icn-linkedin.jpg" alt="" /></a></li>
+              <li><a class='north' href="https://twitter.com/deepakmodak" title="Follow me on Twitter"><img src="images/icn-twitter.jpg" alt="" /></a></li>
+              <li><a class='north' href="https://www.facebook.com/deepakmodak" title="My Facebook Profile"><img src="images/icn-facebook.jpg" alt="" /></a></li>
+            </ul>
+          </div>
+          <!-- End Social -->
+        </div>
+        <!-- Begin 1st Row -->
+        <div class="entry">
+          <h2>OBJECTIVE</h2>
+          <p>1] I like to do things that haven’t been done before.<br/>
+			 2] I would like to work at a place where I can both learn and contribute.<br/>
+			 3] Like to do (1) and (2) in the company of like-minded people.</p>
+        </div>
+        
+        <div class="entry">
+          <h2>GitHub Repository</h2>
+          
+		  <div id="myProjects"></div>
+		  <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+ jQuery(document).ready(function($){
+  $.getJSON("https://api.github.com/users/deepakmodak/repos?callback=?", function(data){
+
+	var d="<p>";
+	for(var i=0;i<data.data.length;i++)
+	{
+    		var repo_name = data.data[i].name;
+		var repo_desc= data.data[i].description;
+		var repo_url= data.data[i].homepage;
+		if(repo_url == null){
+			repo_url="https://github.com/deepakmodak/"+repo_name;
+			repo_desc="My Github repository page";
+		}
+		d=d+'<strong><a href="'+repo_url+'">'+repo_name+"</a></strong><i><em>[ "+repo_desc+" ]</em></i><br/>";
+	}
+	d=d+"</p>";
+	document.getElementById("myProjects").innerHTML=d;
+  });
+});
+</script>
+
+        </div>
+        <!-- End 3rd Row -->
+        </div>
+      <div class="clear"></div>
+      <div class="paper-bottom"></div>
+    </div>
+    <!-- End Paper -->
+  </div>
+  <div class="wrapper-bottom"></div>
+</div>
+<div id="message"><a href="#top" id="top-link">Go to Top</a></div>
+<!-- End Wrapper -->
+</body>
+</html>
